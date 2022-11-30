@@ -1,6 +1,6 @@
 ﻿namespace Applinate.Internals
 {
-    public static class RequestExecutorManager
+    public static class RequestExecutorHelper
     {
         public static void Register()
         {

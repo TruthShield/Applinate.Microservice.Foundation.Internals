@@ -3,13 +3,13 @@
     public static class RequestContextHelper
     {
         public static void SetCurrentRequestContext(this RequestContext ctx) =>
-            RequestContext.Current = ctx;
+            RequestContextProvider.Instance = ctx;
 
-        public static RequestContext GetCurrentRequestContext() => 
-            RequestContext.Current;
+        public static RequestContext GetCurrentRequestContext() =>
+            RequestContextProvider.Instance;
 
         internal static void SetCurrentRequestContextAsClient() =>
-            RequestContext.Current = RequestContext.Current with 
+           RequestContextProvider.Instance = RequestContextProvider.Instance with 
             { 
                 ServiceType = ServiceType.Client 
             };
